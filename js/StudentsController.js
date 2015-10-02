@@ -1,4 +1,4 @@
-studentRoster.controller('SturentsCtrl', function StudentsCtrl($scope) {
+studentRoster.controller('StudentsCtrl', function StudentsCtrl($scope) {
   $scope.students = [
     { name: "Sam Smith"},
     { name: "Dean Devlin"},
