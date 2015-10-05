@@ -14,7 +14,11 @@
         <div class="col-md-12">
           <h2>Student List</h2>
             <ul>
-              <li ng-repeat="item in students">{{item.name}}</li>
+              <li ng-repeat="item in students">
+                <span ng-click="editing = true" ng-hide="editing">
+                {{item.name}} <a ng-click="deleteStudent(item)">Delete</a>
+                </span>
+              </li>
             </ul>
         </div>
         <div class="col-md-4">
