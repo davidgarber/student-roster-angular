@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <script src="lib/angular.js"></script>
     <script src="app.js"></script>
-    <script src="js/StudentsController.js"></script>
+    <script src="controllers/StudentsController.js"></script>
+    <script src="controllers/FieldTripsController.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title>Student Roster</title>
   </head>
   <body>
-    <div class="container" ng-controller="StudentsCtrl">
+    <div class="container">
+      <div ng-controller="StudentsCtrl">
+
       <div class="row">
           <div class="col-md-12">
             <h4>Search Students</h4>
@@ -27,7 +30,7 @@
         </div>
         <div class="col-md-12">
             <ul>
-              <li ng-repeat="item in students | filter:query">
+              <li ng-repeat="item in filtered = (students|filter:query)">
                 <span ng-click="editing = true" ng-hide="editing">
                 {{item.name}} <a ng-click="deleteStudent(item)">Delete</a>
                 </span>
@@ -49,7 +52,17 @@
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>
-
+      </div>
+        <div class="row permission" ng-controller="FieldTripsCtrl">
+          <div class="col-md-6">
+            <h2>Permission Slips</h2>
+            <ul>
+              <li ng-repeat="item in studentsWithPermisssion">
+                {{item.name}}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
