@@ -1,4 +1,4 @@
-studentRoster.factory('StudentFactory', function StudentsFactory() {
+studentRoster.factory('StudentsFactory', function StudentsFactory() {
   var factory = {};
   factory.students = [];
 
@@ -7,7 +7,7 @@ studentRoster.factory('StudentFactory', function StudentsFactory() {
     factory.students.push(student);
     factory.studentName = null;
   };
-  factory.deleteStudent = function() {
+  factory.deleteStudent = function(student) {
     var index = factory.students.indexOf(student);
     factory.students.splices(index, 1);
   };
